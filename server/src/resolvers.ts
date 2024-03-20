@@ -1,12 +1,16 @@
-export const resolvers = {
+import { Resolvers } from "./types";
+
+const resolvers: Resolvers = {
     Query: {
-        tracksForHome: (_: any, __: any, { dataSource }: any) => {
-            return dataSource.trackAPI.getTracksForHome();
+        tracksForHome: (_, __, { dataSources }) => {
+            return dataSources.trackingAPI.getTracksForHome();
         },
     },
     Track: {
-        author: ( { authorId }: any, __: any, { dataSource }: any) => {
-            return dataSource.trackAPI.getAuthor(authorId);
+        author: ( { authorId }, __, { dataSources }) => {
+            return dataSources.trackingAPI.getAuthor(authorId);
         },
     },
 };
+
+export default resolvers;
