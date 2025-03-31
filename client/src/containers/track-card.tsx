@@ -9,7 +9,7 @@ import { gql } from "../__generated__";
 import { useMutation } from "@apollo/client";
 
 
-const INCREMENT_TRACK_VIEWS = gql(`
+const INCREMENT_TRACK_VIEWS = gql(` 
   mutation IncrementTrackViews($incrementTrackViewsId: ID!) {
     incrementTrackViews(id: $incrementTrackViewsId) {
       code
